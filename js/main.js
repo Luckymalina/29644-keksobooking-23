@@ -1,34 +1,27 @@
 const getRandomInteger = (from, to) => {
 
-  if(from < 0 ){
-    throw 'Введите число больше или равно нулю';
-  }
-  if(to < 0 ){
-    // Math.abs(to);
-    throw 'Введите число больше или равно нулю';
-  }
+  if(from < 0 || to <= from){
+    throw new Error('Введите число больше или равно нулю, второе число диапазона должно быть больше первого');
+  };
 
-  const rand = from + Math.random() * (to + 1 - from);
+  const randomInteger = Math.random() * (to - from) + from;
 
-  return Math.round(rand);
+  return Math.round(randomInteger);
 
 };
+
 getRandomInteger(2,100);
 
+const getRandomFloat = (from, to, symbols) => {
 
-const getFloatInteger = (from, to, symbols) => {
+  if(from < 0 || to <= from){
+    throw new Error('Введите число больше или равно нулю, второе число диапазона должно быть больше первого');
+  };
 
-  if(from < 0 ){
-    return Math.abs(from);
-  }
-  if(to < 0 ){
-    return Math.abs(to);
-  }
+  const RandomFloat = (Math.random() * (to - from) + from).toFixed(symbols);
 
-  const number = (from + Math.random() * (to + 1 - from)).toFixed(symbols);
-
-  return Number(number);
+  return Number(RandomFloat);
 
 };
 
-getFloatInteger(2, 40, 5);
+getRandomFloat(2, 40, 5);
