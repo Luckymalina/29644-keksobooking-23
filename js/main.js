@@ -31,7 +31,9 @@ const PHOTOS_APARTMENT = [
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/duonguyen-8LrGtIxxa4w.jpg',
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/brandon-hoogenboom-SNxQGWxZQi0.jpg',
   'https://assets.htmlacademy.ru/content/intensive/javascript-1/keksobooking/claire-rendall-b6kAwr1i0Iw.jpg',
-];const getRandomInteger = (from, to) => {
+];
+
+const getRandomInteger = (from, to) => {
 
   if(from < 0 || to <= from){
     throw new Error('Введите число больше или равно нулю, второе число диапазона должно быть больше первого');
